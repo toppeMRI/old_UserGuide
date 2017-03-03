@@ -85,7 +85,8 @@ This will create two executables: {\tt \psdname} and {\tt \psdname.psd.o}.
 
 Follow these steps to prescribe and run the toppe sequence:
 \begin{enumerate}
-	\item Copy {\tt \psdname} and {\tt \psdname.psd.o} to /usr/g/bin/ on the scanner host computer (console). This is only done once per scanner software upgrade.
+	\item Copy {\tt \psdname}, {\tt \psdname.psd.o}, and the legacy files to /usr/g/bin/ on the scanner host computer (console). This only needs to be done once per scanner software upgrade.
+	\item Copy the legacy files to /usr/g/bin/ on the scanner host computer (console). This is only done once per scanner software upgrade.
 	\item Copy {\tt modules.txt}, {\tt scanloop.txt}, and all .mod files to /usr/g/bin/.
 	\item Required files:
 	\begin{itemize}
@@ -95,10 +96,9 @@ Follow these steps to prescribe and run the toppe sequence:
 	\item Prescribe the toppe sequence:
 \begin{itemize}
 	\item Select Axial 2D pulse sequence; Family: 'Gradient Echo'; pulse: 'GRE'; PSD Name: '\psdname'; click 'Accept'. (Fig.~\ref{fig:Rx1})
-	\item Set slice thickness to the design value.
-	\item Set slice spacing to 0.
-	\item Set number of slices to {\tt rhnslices}$-1$ (see discussion of scanloop.txt above).
+	\item Prescribe a single axial slice.
 	\item Set shim of 'off'.
+	\item Other settings do not matter but must be specified. Suggested values are: Slice thickness 3, slice spacing 0, number of slices 1.
 \end{itemize}
 	\item Save and download the sequence, and run autoprescan.
 	\item Click scan button. This will create a Pfile in /usr/g/mrraw/.

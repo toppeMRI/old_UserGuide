@@ -1,7 +1,12 @@
 
 \chapter{Using the toppe sequence}
 
-%\section{Getting started}
+\section{Getting started: running an example sequence}
+
+The MATLAB code repository contains several complete pulse sequence examples, such as 3D spoiled gradient-echo (SPGR) and stack-of-spirals echo-shifted dynamic imaging (PRESTO fMRI). 
+We recommend starting by running of these sequences.
+See the TOPPE website (\url{https://toppemri.github.io/}) for details.
+
 
 
 \section{Creating .mod files}
@@ -10,7 +15,7 @@ Important notes and caveats:
 \begin{itemize}
 \item All waveforms in a module must have the same length, i.e., they must be padded with zeroes as needed.
 \item Even if the module is not an RF excitation module, you must create a non-zero 'dummy' RF pulse to ensure that the .mod file will be loaded correctly on the scanner (hopefully this bug will be fixed in future releases). A simple hard RF pulse of low amplitude (e.g., 0.01 Gauss) seems to work well in most cases.
-\item If the module is a readout module, data will be acquired every 4~$\mu$ for the entire duration of the waveforms in the .mod file. Depending on your readout trajectory, you may therefore need to discard some of the data (near the beginning and/or end of the module) before reconstructing.
+\item If the module is a readout module, data will be acquired every 4~$\mu$s for the entire duration of the waveforms in the .mod file. Depending on your readout trajectory, you may therefore need to discard some of the data (near the beginning and/or end of the module) before reconstructing.
 \item If more than one readout .mod file is used, they must all be the same length (readout windows of different widths are not permitted).
 \item For backward compatibility, the following must be done (this may change in future releases):
 \begin{itemize}
@@ -55,8 +60,7 @@ In addition, \texttt{playseq.m} obtains exact sequence timing information from t
 
 \section{Compiling the toppe pulse sequence}
 
-The current version of \toppe~has been compiled for DV25, and has been tested on a GE Discovery MR750 3T scanner.
-The\toppe~source code is in the \texttt{psd} directory.
+The current version of \toppe~has been compiled for DV25.1\_R01, and has been tested on a GE Discovery MR750 3T scanner.
 
 To compile, follow the usual EPIC compilation steps.
 First, check compiler version:
@@ -64,13 +68,8 @@ First, check compiler version:
 \begin{lstlisting}
  which psdqmake
 \end{lstlisting}
-With the compiler at University of Michigan, the output is 
-\vspace{-10pt}
-\begin{lstlisting}
- /ESE_DV25.0_R01/psd/bin/psdqmake
-\end{lstlisting}
 
-Prepare directory for compilation and compile:
+Then prepare directory for compilation and compile:
 \vspace{-10pt}
 \begin{lstlisting}
  prep_psd_dir

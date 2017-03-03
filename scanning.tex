@@ -1,6 +1,9 @@
 
 \chapter{Using the toppe sequence}
 
+%\section{Getting started}
+
+
 \section{Creating .mod files}
 The TOPPE MATLAB repository (\matrep) includes the Matlab script {\tt \bf mat2mod.m} that writes rho, theta, gx, gy, and gz waveforms for a module to a .mod file.
 Important notes and caveats:
@@ -34,24 +37,15 @@ This means that there will be an odd number of slice slots available for useful 
 
 We recommend displaying your sequence in Matlab using \texttt{playseq.m} before attempting to play it on the scanner, to verify that the correct modules are played out in the intended order.
 \texttt{playseq.m} attempts to reproduce the exact module timing seen on the scanner, using CV values in the file \texttt{timing.txt}.
-To use \texttt{scansim.m}, first use \texttt{readloop.m} to load a \texttt{scanloop.txt} file.
-\texttt{scansim.m} and \texttt{readloop.m} can be found in the \texttt{matlab} directory.
-As an example, do the following in the \texttt{example} directory:
-\begin{lstlisting}
-  >> addpath('../matlab/');
-  >> d = readloop('scanloop.txt');
-  >> startseqStart = 10000;
-  >> startseqEnd = startseqStart+19; % display 20 consecutive startseq() calls
-  % Load the .mod files listed in modules.txt and display part of sequence.
-  % Exact timing information is loaded from 'timing.txt':
-  >> scansim(startseqStart,startseqEnd,d);  
-\end{lstlisting}
+For examples of how to use \texttt{playseq.m}, see the readme file in the {\tt examples} folder in the Matlab repository (\url{https://github.com/toppeMRI/matlab}).
+%\begin{lstlisting}
+%\end{lstlisting}
 
 \myfigure{scansim}{1.0}{
-Example sequence display created with \texttt{scansim.m}.
+Example sequence display created with \texttt{playseq.m}.
 The sequence shown is a Bloch-Siegert B1 transmit mapping sequence with a 3D Cartesian readout.
-Like the \texttt{toppe} and \texttt{toppe.psd.o} executables on the scanner, \texttt{scansim.m} loads \texttt{modules.txt} and the .mod files listed therein, and \texttt{scanloop.txt}.
-In addition, \texttt{scansim.m} obtains exact sequence timing information from the file \texttt{timing.txt}.
+Like the \texttt{toppe} and \texttt{toppe.psd.o} executables on the scanner, \texttt{playseq.m} loads \texttt{modules.txt} and the .mod files listed therein, and \texttt{scanloop.txt}.
+In addition, \texttt{playseq.m} obtains exact sequence timing information from the file \texttt{timing.txt}.
 }
 
 
@@ -111,13 +105,13 @@ Follow these steps to prescribe and run the toppe sequence:
 	\item To run a different TOPPE scan, simply overwrite modules.txt and scanloop.txt and make sure the .mod files for the next sequence exist in /usr/g/bin/. Then download the sequence (right-click) and hit Scan button. You do not need to prescribe a new sequence every time you load a new set of external files.
 \end{enumerate}
 
-\mywrapfigure{Rx1}{R}{0.98}{
+\myfigure{Rx1}{0.98}{
 Scanner prescription, screenshot 1.
 }
-\mywrapfigure{Rx2}{R}{0.98}{
+\myfigure{Rx2}{0.98}{
 Scanner prescription, screenshot 2.
 }
-\mywrapfigure{Rx3}{R}{0.98}{
+\myfigure{Rx3}{0.98}{
 Scanner prescription, with manual prescan window.
 }
 

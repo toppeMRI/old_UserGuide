@@ -11,10 +11,10 @@ $CMD main
 rm -rf *.aux
 rm -rf *.log
 
-mv main.pdf TOPPE_UserGuide.pdf
+#cp main.pdf TOPPE_UserGuide.pdf
 
 # acroread main.pdf &
 #xpdf -z 150 main.pdf &
 #xpdf -fullscreen main.pdf &
-evince TOPPE_UserGuide.pdf &
+evince main.pdf &
 

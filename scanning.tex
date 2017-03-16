@@ -117,7 +117,14 @@ Scanner prescription, with manual prescan window.
 
 \section{Checklist}
 
-Remember the following recommendations, which have been determined empirically:
+\begin{itemize}
+	\item One of the RF files must be named {\tt tipdown.mod} 
+	\item One of the readout files must be name {\tt readout.mod}
+	\item The legacy files must be copied to /usr/g/bin/.
+	\item In each module (.mod file), all gradient waveforms must begin and end at 0.
+\end{itemize}
+
+In addition, remember the following recommendations, which have been determined empirically:
 \begin{itemize}
 	\item It seems that {\tt rhnslices} should be even to avoid corrupt data.
 	\item It seems safest to avoid storing data in the {\tt dabslice}$=$0 slot (in \texttt{loaddab()}), since data frames (``views'') for this slot are often flipped (reversed) with respect to the rest of the Pfile.
@@ -127,7 +134,7 @@ Remember the following recommendations, which have been determined empirically:
 \section{Known bugs and limitations}
 \begin{itemize}
 	\item Data may be saved in \textbf{reverse order} (due to oeff and eeff flags), so keep an eye out for this. Inspect your raw data. %be sure to account for this if you use a script other than \texttt{loaddat\_ge.m} to load raw data from Pfile. (\texttt{loaddat\_ge.m} resides in the \texttt{matlab} folder in this distribution). 
-	\item Auto prescan may not work, hence the use of manual prescan above.
+	\item We have observed empirically that data for the last slice is sometimes flipped.
 	\item B1 scaling across multiple RF pulses has not been verified. May need to expand \texttt{rfpulse} struct.
 	\item \toppe~ does not support cardiac/respiratory gating at the moment. If other groups have a need for this we believe gating can be easily added.
 	\item \toppe~does not currently do any checks for SAR, PNS, or gradient heating.

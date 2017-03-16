@@ -13,7 +13,7 @@
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    sodipodi:docname="timing.svg"
    version="1.0"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:version="0.32"
    id="svg2"
    height="531"
@@ -29,16 +29,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.73634"
-     inkscape:cx="170.63986"
-     inkscape:cy="214.28931"
+     inkscape:cx="2.4700318"
+     inkscape:cy="306.43716"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1855"
-     inkscape:window-height="1176"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1154"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:object-paths="true"
      inkscape:object-nodes="true"
      inkscape:snap-global="false"
@@ -8643,17 +8643,6 @@
        id="path6259"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text6261"
-       y="269.8183"
-       x="311.69217"
-       style="font-size:6.04625034px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       xml:space="preserve"><tspan
-         y="269.8183"
-         x="311.69217"
-         id="tspan6263"
-         sodipodi:role="line">core duration (as specified in cores.txt)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.48435655;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 217.45478,310.84792 0,111.45807"
@@ -8806,17 +8795,6 @@
        id="path4610"
        d="m 218.19983,444.21947 266.77208,0"
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart-2);marker-end:url(#Arrow1Mend-9)" />
-    <text
-       xml:space="preserve"
-       style="font-size:6.04625034px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="311.69217"
-       y="452.93066"
-       id="text4612"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4614"
-         x="311.69217"
-         y="452.93066">core duration (as specified in cores.txt)</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -8977,14 +8955,14 @@
     <text
        sodipodi:linespacing="125%"
        id="text4725"
-       y="631.73938"
-       x="311.69217"
-       style="font-size:6.04625034px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       y="271.78683"
+       x="306.50885"
+       style="font-style:normal;font-weight:normal;font-size:6.04625034px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="631.73938"
-         x="311.69217"
+         y="271.78683"
+         x="306.50885"
          id="tspan4727"
-         sodipodi:role="line">core duration (as specified in cores.txt)</tspan></text>
+         sodipodi:role="line">minimum module duration </tspan></text>
     <text
        xml:space="preserve"
        style="font-size:8.04361629px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -9050,5 +9028,27 @@
          x="172.01137"
          id="tspan6555"
          sodipodi:role="line">(c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.04625034px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="306.50885"
+       y="453.20291"
+       id="text6312"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6314"
+         x="306.50885"
+         y="453.20291">minimum module duration </tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6316"
+       y="630.58752"
+       x="306.50885"
+       style="font-style:normal;font-weight:normal;font-size:6.04625034px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="630.58752"
+         x="306.50885"
+         id="tspan6318"
+         sodipodi:role="line">minimum module duration </tspan></text>
   </g>
 </svg>

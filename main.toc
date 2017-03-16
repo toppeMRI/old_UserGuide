@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {2.4}Creating scanloop.txt}{6}{section.2.4}
 \contentsline {section}{\numberline {2.5}Pre-viewing your sequence with {\tt playseq.m} }{6}{section.2.5}
 \contentsline {section}{\numberline {2.6}Compiling the toppe pulse sequence}{6}{section.2.6}
-\contentsline {section}{\numberline {2.7}Step-by-step scanner instructions}{6}{section.2.7}
+\contentsline {section}{\numberline {2.7}Step-by-step scanner instructions}{7}{section.2.7}
 \contentsline {section}{\numberline {2.8}Checklist}{8}{section.2.8}
 \contentsline {section}{\numberline {2.9}Known bugs and limitations}{9}{section.2.9}
 \contentsline {chapter}{\numberline {3}Controlling sequence timing}{11}{chapter.3}

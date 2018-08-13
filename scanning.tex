@@ -37,9 +37,8 @@ Columns are tab-separated.
 The {\tt examples} folder in the TOPPE MATLAB repository (\matrep) contains several examples of how {\tt scanloop.txt} can be created.
 Specifically, this is done in each example with the script {\tt \bf writeloop.m}.
 
-We have determined empirically that to avoid data corruption, {\bf{\tt rhnslices} should be even}.
-In addition, for now, avoid loading the {\tt dabslice}$=0$ slot with data. 
-This means that there will be an odd number of slice slots available for useful data.
+We have determined empirically that to avoid data corruption, the number of slices should be even.
+In addition, avoid loading the {\tt slice}$=0$ slot with data. 
 
 
 \section{Pre-viewing your sequence with {\tt playseq.m} }
@@ -122,14 +121,13 @@ Scanner prescription, with manual prescan window.
 \begin{itemize}
 	\item One of the RF files must be named {\tt tipdown.mod} 
 	\item One of the readout files must be named {\tt readout.mod}
-	\item The legacy files must be copied to /usr/g/bin/.
 	\item Make sure your .mod files comply with the requirements listed in Section~\ref{sec:cmf}.
 \end{itemize}
 
 In addition, remember the following recommendations, which have been determined empirically:
 \begin{itemize}
-	\item It seems that {\tt rhnslices} should be even to avoid corrupt data.
-	\item It seems safest to avoid storing data in the {\tt dabslice}$=$0 slot (in \texttt{loaddab()}), since data frames (``views'') for this slot are often flipped (reversed) with respect to the rest of the Pfile.
+	\item It seems that the number of 'slices' should be even to avoid corrupt data.
+	\item It seems safest to avoid storing data in the {\tt slice}$=$0 slot (in \texttt{loaddab()}), since data frames (``views'') for this slot are often flipped (reversed) with respect to the rest of the Pfile.
 \end{itemize}
 
 

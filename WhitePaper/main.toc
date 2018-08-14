@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {1}Source files}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}{\tt jfn\_rf\_files2.c} and {\tt jfn\_rf\_files2.h}}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1} {\tt $\star $.mod} files}{6}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}\tt modules.txt}{6}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}\tt scanloop.txt}{6}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Source code and other resources}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}https://github.com/toppeMRI/matlab}{7}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Binary executable (driver/interpreter}{8}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}https://github.com/toppeMRI/UserGuide}{8}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}https://toppemri.github.io/}{8}{subsection.1.3.4}

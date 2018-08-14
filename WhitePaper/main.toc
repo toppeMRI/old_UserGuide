@@ -7,5 +7,4 @@
 \contentsline {subsection}{\numberline {1.4.2}Miscellaneous sequence information}{10}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Loading waveform shapes}{10}{subsection.1.4.3}
 \contentsline {subsection}{\numberline {1.4.4}Loading scanloop.txt}{10}{subsection.1.4.4}
-\contentsline {subsection}{\numberline {1.4.5}Sequence execution}{10}{subsection.1.4.5}
-\contentsline {subsection}{\numberline {1.4.6}\tt scanloop.txt}{10}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.4.5}Sequence execution}{11}{subsection.1.4.5}

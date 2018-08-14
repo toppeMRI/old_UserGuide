@@ -3,11 +3,9 @@
 \contentsline {section}{\numberline {1.2}{\tt jfn\_rf\_files2.c} and {\tt jfn\_rf\_files2.h}}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3} {\tt cores.c}, {\tt cores.h} }{6}{section.1.3}
 \contentsline {section}{\numberline {1.4} {\tt toppev2.e}}{9}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1} {\tt $\star $.mod} files}{10}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}\tt modules.txt}{10}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}\tt scanloop.txt}{11}{subsection.1.4.3}
-\contentsline {section}{\numberline {1.5}Source code and other resources}{11}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}https://github.com/toppeMRI/matlab}{12}{subsection.1.5.1}
-\contentsline {subsection}{\numberline {1.5.2}Binary executable (driver/interpreter}{12}{subsection.1.5.2}
-\contentsline {subsection}{\numberline {1.5.3}https://github.com/toppeMRI/UserGuide}{12}{subsection.1.5.3}
-\contentsline {subsection}{\numberline {1.5.4}https://toppemri.github.io/}{12}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.4.1}Loading modules.txt}{9}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Miscellaneous sequence information}{10}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Loading waveform shapes}{10}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Loading scanloop.txt}{10}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Sequence execution}{10}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}\tt scanloop.txt}{10}{subsection.1.4.6}

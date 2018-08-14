@@ -454,15 +454,18 @@ int cores_readloop(char *fname, int* looparr) {
 
 \section{ \toppe }
 
-\toppe~is written in EPIC, a proprietary C-based programming language developed by GE, and can therefore not be listed in full here.
+\toppe~is written in EPIC, a proprietary C-based programming language developed by GE, and can therefore not be listed in full here \footnote{For access to \toppe, see \url{https://toppemri.github.io/}}.
 Only code excerpts are presented here.
+
+
+\subsection{Loading modules.txt}
 
 Prior to scanning, \toppe~first reads {\tt modules.txt}:
 
 \begin{lstlisting}
 	#define MAXCORES 20 /* determined empirically */
 
-	corestruct coredefinfo;  /* contains list of .mod files and related info. See cores.h */
+	corestruct coredefinfo;  /* contains list of .mod files and related info */
 
 	int hasRF[MAXCORES]; 
 	int hasDAQ[MAXCORES];
@@ -480,8 +483,11 @@ Prior to scanning, \toppe~first reads {\tt modules.txt}:
 
 At this point, {\tt coredefinfo} also contains a list of {\tt .mod} file names.
 
+
+\subsection{Miscellaneous sequence information}
+
 Miscellaneous other information is also loaded early on during sequence prescription. 
-For example, the number of samples to acquired (per readout) is loaded from {\tt readout.mod}:
+For example, the number of samples to acquire (per readout) is loaded from {\tt readout.mod}:
 
 \begin{lstlisting}
 	rfstruct roinfo;         /* see jfn_rf_files2.c/h */
@@ -490,14 +496,32 @@ For example, the number of samples to acquired (per readout) is loaded from {\tt
 \end{lstlisting}
 
 
-{\tt roinfo} now contains all waveforms for the {\tt readout.mod} module.
-Waveforms are loaded for all {\tt .mod} files listed in {\tt modules.txt} (not shown).
+\subsection{Loading waveform shapes}
 
-The waveform shapes (contained in {\tt roinfo} are then transferred to the MR sequencer hardware, using EPIC functions (not shown).
+\toppe~then loads all waveforms for the {\tt .mod} files contained in the {\tt coredefinfo} struct:
+
+\begin{lstlisting}
+	rfstruct* coresinfo;  /* array of rfstruct (.mod file info) for array of cores */
+
+	coresinfo = (rfstruct *) AllocNode(ncores*sizeof(rfstruct));
+
+	for ( j=0; j<ncores; j++ ) {
+
+		/* read and load .mod file for core j */
+		jfn_rf_readheader(coredefinfo.wavfiles[j], &coresinfo[j]);
+		jfn_rf_allocatemem(&coresinfo[j]);     
+		jfn_rf_readwaveforms(&coresinfo[j], ishard);
+
+\end{lstlisting}
+
+The struct array {\tt coresinfo} now contains all sequence waveforms, for all modules.
+
+The waveforms are then moved to sequence hardware, using EPIC functions (not shown).
 
 
+\subsection{Loading scanloop.txt}
 
-\toppe~then reads {\tt scanloop.txt}:
+The final task before executing the sequence is to load the scan loop description:
 
 \begin{lstlisting}
 	int looparr[9000000];    /* scan loop definition, loaded from scanloop.txt */
@@ -516,28 +540,9 @@ The waveform shapes (contained in {\tt roinfo} are then transferred to the MR se
 The scan loop information is now stored in the array {\tt looparr}.
 
 
+\subsection{Sequence execution}
 
-\subsection{ {\tt $\star$.mod} files}
-For example, an RF excitation module may be defined by a file called {\tt tipdown.mod} that specifies the RF amplitude and phase waveforms (rho and theta) and all three gradients.
-Similarly, a Cartesian (spin-warp) gradient-echo readout may be defined in a file {\tt readout.mod} that contains readout and phase-encode gradient waveforms.
-Finally, a spoiler gradient can be defined in a file {\tt spoiler.mod}.
-Each .mod file is unique up to waveform scale factors and to a rotation in the logical xy-plane, and typically only a few .mod files are needed.
-Note that each .mod file gives rise to a separate {\tt createseq()} call in \toppe.
-Also, each .mod file can contain multiple waveform shapes, that can be selected dynamically (column \waveformnum~in {\tt scanloop.txt}).
 
-\subsection{\tt modules.txt}
-The various $\star$.mod files needed to define a scan are listed in a small text file named {\tt modules.txt}, which simply contains a line for each .mod file specifying the file name, core duration, and whether it is an RF excitation module, readout module, or gradients-only module.
-Values are tab-separated.
-A {\tt modules.txt} file for our simple spin-warp imaging example may look like this:
-\begin{lstlisting}
-Total number of unique cores
-3
-wavfile_name	duration(us)	hasRF?	hasDAQ?
-tipdown.mod	0	1	0
-readout.mod	0	0	1
-spoiler.mod	0	0	0
-\end{lstlisting}
-A duration of 0 means that the minimum core duration for that .mod file will be used.
 
 \subsection{\tt scanloop.txt}
 Finally, the complete MR scan loop is specified in {\tt scanloop.txt}, in which each line corresponds to a separate {\tt startseq()} call in \toppe.
@@ -584,39 +589,6 @@ For long scans, {\tt scanloop.txt} can contain many tens of thousands of lines.
 %tipdowncore ia_tipdown ia_th max_pg_iamp max_pg_iamp max_pg_iamp dabslice dabecho dabview daboff 0 irfphase irfphase textra rffreq waveform
 
 
-
-\section{Source code and other resources}
-
-TOPPE is open-source and is available at the following sites:
-
-\subsection{https://github.com/toppeMRI/matlab}
-
-Matlab scripts for creating and viewing TOPPE files. Also contains complete sequence examples.
-To access the code, you can either browse the website, or copy the entire repository to local disk as follows:
-
-\begin{lstlisting}
-git clone https://github.com/toppemri/matlab
-\end{lstlisting}
-
-
-\subsection{Binary executable (driver/interpreter}
-
-See \url{https://toppemri.github.io/} for more info.
-
-
-\subsection{https://github.com/toppeMRI/UserGuide}
-
-Latex source files for this user guide.
-To access, browse the website or copy the entire repository to local disk as follows:
-\begin{lstlisting}
-git clone https://github.com/toppemri/UserGuide
-\end{lstlisting}
-
-
-
-\subsection{https://toppemri.github.io/}
-
-The TOPPE website.
 
 
 
